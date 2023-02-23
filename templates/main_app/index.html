@@ -1,0 +1,959 @@
+{% load static %}
+{#{% get_media_prefix %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arbind Mehta | Computer Engineer</title>
+    <meta property="og:title" content="Arbind Mehta | Computer Engineer">
+    <meta name="twitter:title" content="Arbind Mehta | Computer Engineer">
+    <meta name="description" content="Desktop, Mobile, and Web application development specialist.">
+    <meta property="og:description" content="Desktop, Mobile, and Web application development specialist.">
+    <meta name="twitter:description" content="Desktop, Mobile, and Web application development specialist.">
+    <meta property="og:image" content="{% static 'site_stuffs/profile_card.png' %}">
+    <meta name="twitter:image" content="{% static 'site_stuffs/profile_card.png' %}">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light" id="nav_bar_div">
+    <a class="navbar-brand" onclick="showWelcome()">
+        <table id="brand_table">
+            <tr>
+                <td rowspan="2">
+                    <div id="cir_logo"></div>
+                </td>
+                <td>
+                    <span id="brand_name">Arbind Mehta</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span id="brand_title">Computer Engineer</span>
+                    <div id="brand_title_underline"></div>
+                </td>
+            </tr>
+        </table>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link nav_itm" onclick="showResume()" id="res_lnk"><span><div
+                        class="nav_bullet res_bullet"></div>Resume</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav_itm" onclick="showPortfolio()" id="por_lnk"><span><div
+                        class="nav_bullet por_bullett"></div>Portfolio</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav_itm" onclick="showContacts()" id="con_lnk"><span><div
+                        class="nav_bullet con_bullet"></div>Contacts</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav_itm" id="con_lnk" onclick="toogleMode()">
+                    <div class="brightness_logo">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                            <g id="Layer_x5F_1">
+                            <g id="_2850759408912">
+                                <path id="brightness_logo_path" fill="#222222" d="M19.79,14.62c2.58,0,4.91,1.05,6.6,2.74c1.69,1.69,2.74,4.03,2.74,6.6c0,2.58-1.05,4.91-2.74,6.6
+                                    c-1.69,1.69-4.03,2.74-6.6,2.74v0c-0.04,0-0.08,0-0.12,0v0c-0.04,0-0.08,0-0.12,0v0c-0.04,0-0.08,0-0.12,0v0
+                                    c-0.04,0-0.08,0-0.12-0.01v0c-0.04,0-0.08,0-0.12-0.01v0c-0.04,0-0.08-0.01-0.12-0.01v0c-0.04,0-0.08-0.01-0.12-0.01l0,0
+                                    c-0.04,0-0.08-0.01-0.12-0.01l0,0c-0.04,0-0.08-0.01-0.12-0.01l0,0c-0.04,0-0.08-0.01-0.12-0.01l0,0c-0.04,0-0.08-0.01-0.12-0.02
+                                    l0,0c-0.04-0.01-0.08-0.01-0.12-0.02l0,0c-0.04-0.01-0.08-0.01-0.12-0.02v0c-0.04-0.01-0.08-0.01-0.12-0.02l0,0
+                                    c-0.04-0.01-0.08-0.01-0.11-0.02l0,0c-0.04-0.01-0.08-0.01-0.11-0.02l0,0c-0.04-0.01-0.08-0.02-0.11-0.02l0,0
+                                    c-0.04-0.01-0.08-0.02-0.11-0.03l0,0c-0.04-0.01-0.08-0.02-0.11-0.03l0,0c-0.04-0.01-0.07-0.02-0.11-0.03l0,0
+                                    c-0.04-0.01-0.07-0.02-0.11-0.03l0,0c-0.04-0.01-0.07-0.02-0.11-0.03l0,0c-0.04-0.01-0.07-0.02-0.11-0.03l0,0
+                                    c-0.04-0.01-0.07-0.02-0.11-0.03l0,0c-0.04-0.01-0.07-0.02-0.11-0.03l0,0c-0.04-0.01-0.07-0.02-0.11-0.04l0,0
+                                    c-0.04-0.01-0.07-0.02-0.11-0.04l0,0c-0.04-0.01-0.07-0.03-0.11-0.04l0,0c-0.04-0.01-0.07-0.03-0.11-0.04l0,0
+                                    c-0.04-0.01-0.07-0.03-0.11-0.04l0,0c-0.04-0.01-0.07-0.03-0.11-0.04l0,0c-0.04-0.01-0.07-0.03-0.11-0.04l0,0
+                                    c-0.03-0.01-0.07-0.03-0.1-0.04l0,0c-0.03-0.02-0.07-0.03-0.1-0.05h0c-0.03-0.02-0.07-0.03-0.1-0.05l0,0
+                                    c-0.03-0.02-0.07-0.03-0.1-0.05l0,0c-0.03-0.02-0.07-0.03-0.1-0.05l0,0c-0.03-0.02-0.07-0.03-0.1-0.05h0
+                                    c-0.03-0.02-0.07-0.03-0.1-0.05h0c-0.03-0.02-0.07-0.04-0.1-0.05l0,0c-0.03-0.02-0.07-0.04-0.1-0.05l0,0
+                                    c-0.03-0.02-0.07-0.04-0.1-0.06c-0.03-0.02-0.07-0.04-0.1-0.06l0,0c-0.03-0.02-0.06-0.04-0.1-0.06h0
+                                    c-0.03-0.02-0.06-0.04-0.1-0.06h0c-0.03-0.02-0.06-0.04-0.1-0.06l0,0c-0.03-0.02-0.06-0.04-0.09-0.06h0
+                                    c-0.03-0.02-0.06-0.04-0.09-0.06h0c-0.03-0.02-0.06-0.04-0.09-0.06l0,0c-0.03-0.02-0.06-0.04-0.09-0.06l0,0
+                                    c-0.03-0.02-0.06-0.04-0.09-0.07v0c-0.03-0.02-0.06-0.04-0.09-0.07l0,0c-0.03-0.02-0.06-0.04-0.09-0.07h0
+                                    c-0.03-0.02-0.06-0.05-0.09-0.07v0c-0.03-0.02-0.06-0.05-0.09-0.07v0c-0.03-0.02-0.06-0.05-0.09-0.07
+                                    c-0.03-0.02-0.06-0.05-0.09-0.07l0,0c-0.03-0.02-0.06-0.05-0.09-0.07c-0.03-0.02-0.06-0.05-0.08-0.07
+                                    c-0.03-0.02-0.06-0.05-0.08-0.07c-0.03-0.03-0.06-0.05-0.08-0.08c-0.03-0.03-0.05-0.05-0.08-0.08c-0.03-0.03-0.05-0.05-0.08-0.08
+                                    c-0.03-0.03-0.05-0.05-0.08-0.08c-0.03-0.03-0.05-0.05-0.08-0.08c-0.03-0.03-0.05-0.05-0.08-0.08c-0.03-0.03-0.05-0.05-0.08-0.08
+                                    c-0.03-0.03-0.05-0.05-0.08-0.08c-0.03-0.03-0.05-0.06-0.07-0.08c-0.02-0.03-0.05-0.06-0.07-0.08c-0.02-0.03-0.05-0.06-0.07-0.09
+                                    l0,0c-0.02-0.03-0.05-0.06-0.07-0.09c-0.02-0.03-0.05-0.06-0.07-0.09h0c-0.02-0.03-0.05-0.06-0.07-0.09h0
+                                    c-0.02-0.03-0.05-0.06-0.07-0.09v0c-0.02-0.03-0.05-0.06-0.07-0.09l0,0c-0.02-0.03-0.04-0.06-0.07-0.09h0
+                                    c-0.02-0.03-0.04-0.06-0.07-0.09l0,0c-0.02-0.03-0.04-0.06-0.06-0.09l0,0c-0.02-0.03-0.04-0.06-0.06-0.09v0
+                                    c-0.02-0.03-0.04-0.06-0.06-0.09v0c-0.02-0.03-0.04-0.06-0.06-0.09l0,0c-0.02-0.03-0.04-0.06-0.06-0.1v0
+                                    c-0.02-0.03-0.04-0.06-0.06-0.1v0c-0.02-0.03-0.04-0.06-0.06-0.1l0,0c-0.02-0.03-0.04-0.06-0.06-0.1
+                                    c-0.02-0.03-0.04-0.07-0.06-0.1l0,0c-0.02-0.03-0.04-0.07-0.05-0.1l0,0c-0.02-0.03-0.04-0.07-0.05-0.1v0
+                                    c-0.02-0.03-0.03-0.07-0.05-0.1v0c-0.02-0.03-0.03-0.07-0.05-0.1l0,0c-0.02-0.03-0.03-0.07-0.05-0.1l0,0
+                                    c-0.02-0.03-0.03-0.07-0.05-0.1l0,0c-0.02-0.03-0.03-0.07-0.05-0.1v0c-0.02-0.03-0.03-0.07-0.05-0.1l0,0
+                                    c-0.02-0.03-0.03-0.07-0.04-0.1l0,0c-0.01-0.03-0.03-0.07-0.04-0.11l0,0c-0.01-0.04-0.03-0.07-0.04-0.11l0,0
+                                    c-0.01-0.04-0.03-0.07-0.04-0.11l0,0c-0.01-0.04-0.03-0.07-0.04-0.11l0,0c-0.01-0.04-0.03-0.07-0.04-0.11l0,0
+                                    c-0.01-0.04-0.03-0.07-0.04-0.11l0,0c-0.01-0.04-0.02-0.07-0.04-0.11l0,0c-0.01-0.04-0.02-0.07-0.03-0.11l0,0
+                                    c-0.01-0.04-0.02-0.07-0.03-0.11l0,0c-0.01-0.04-0.02-0.07-0.03-0.11l0,0c-0.01-0.04-0.02-0.07-0.03-0.11l0,0
+                                    c-0.01-0.04-0.02-0.07-0.03-0.11l0,0c-0.01-0.04-0.02-0.07-0.03-0.11l0,0c-0.01-0.04-0.02-0.08-0.03-0.11l0,0
+                                    c-0.01-0.04-0.02-0.08-0.03-0.11l0,0c-0.01-0.04-0.02-0.08-0.02-0.11l0,0c-0.01-0.04-0.02-0.08-0.02-0.11l0,0
+                                    c-0.01-0.04-0.01-0.08-0.02-0.11l0,0c-0.01-0.04-0.01-0.08-0.02-0.12h0c-0.01-0.04-0.01-0.08-0.02-0.12l0,0
+                                    c-0.01-0.04-0.01-0.08-0.02-0.12l0,0c-0.01-0.04-0.01-0.08-0.02-0.12l0,0c0-0.04-0.01-0.08-0.01-0.12l0,0
+                                    c0-0.04-0.01-0.08-0.01-0.12l0,0c0-0.04-0.01-0.08-0.01-0.12l0,0c0-0.04-0.01-0.08-0.01-0.12h0c0-0.04-0.01-0.08-0.01-0.12h0
+                                    c0-0.04,0-0.08-0.01-0.12h0c0-0.04,0-0.08-0.01-0.12h0c0-0.04,0-0.08,0-0.12h0c0-0.04,0-0.08,0-0.12h0c0-0.04,0-0.08,0-0.12
+                                    c0-0.04,0-0.08,0-0.12h0c0-0.04,0-0.08,0-0.12h0c0-0.04,0-0.08,0-0.12h0c0-0.04,0-0.08,0.01-0.12h0c0-0.04,0-0.08,0.01-0.12h0
+                                    c0-0.04,0.01-0.08,0.01-0.12h0c0-0.04,0.01-0.08,0.01-0.12h0c0-0.04,0.01-0.08,0.01-0.12h0c0-0.04,0.01-0.08,0.01-0.12h0
+                                    c0-0.04,0.01-0.08,0.01-0.12h0c0-0.04,0.01-0.08,0.02-0.12h0c0.01-0.04,0.01-0.08,0.02-0.12h0c0.01-0.04,0.01-0.08,0.02-0.12l0,0
+                                    c0.01-0.04,0.01-0.08,0.02-0.12h0c0.01-0.04,0.01-0.08,0.02-0.11h0c0.01-0.04,0.01-0.08,0.02-0.11h0
+                                    c0.01-0.04,0.02-0.08,0.02-0.11h0c0.01-0.04,0.02-0.08,0.03-0.11h0c0.01-0.04,0.02-0.08,0.03-0.11h0
+                                    c0.01-0.04,0.02-0.07,0.03-0.11h0c0.01-0.04,0.02-0.07,0.03-0.11h0c0.01-0.04,0.02-0.07,0.03-0.11h0
+                                    c0.01-0.04,0.02-0.07,0.03-0.11h0c0.01-0.04,0.02-0.07,0.03-0.11h0c0.01-0.04,0.02-0.07,0.03-0.11h0
+                                    c0.01-0.04,0.02-0.07,0.04-0.11l0,0c0.01-0.04,0.02-0.07,0.04-0.11h0c0.01-0.04,0.03-0.07,0.04-0.11h0
+                                    c0.01-0.04,0.03-0.07,0.04-0.11h0c0.01-0.04,0.03-0.07,0.04-0.11h0c0.01-0.04,0.03-0.07,0.04-0.11h0
+                                    c0.01-0.04,0.03-0.07,0.04-0.11l0,0c0.01-0.03,0.03-0.07,0.04-0.1h0c0.02-0.03,0.03-0.07,0.05-0.1v0c0.02-0.03,0.03-0.07,0.05-0.1
+                                    l0,0c0.02-0.03,0.03-0.07,0.05-0.1h0c0.02-0.03,0.03-0.07,0.05-0.1l0,0c0.02-0.03,0.03-0.07,0.05-0.1
+                                    c0.02-0.03,0.03-0.07,0.05-0.1c0.02-0.03,0.04-0.07,0.05-0.1h0c0.02-0.03,0.04-0.07,0.05-0.1h0c0.02-0.03,0.04-0.07,0.06-0.1
+                                    c0.02-0.03,0.04-0.07,0.06-0.1h0c0.02-0.03,0.04-0.06,0.06-0.1v0c0.02-0.03,0.04-0.06,0.06-0.1v0c0.02-0.03,0.04-0.06,0.06-0.1h0
+                                    c0.02-0.03,0.04-0.06,0.06-0.09c0.02-0.03,0.04-0.06,0.06-0.09v0c0.02-0.03,0.04-0.06,0.06-0.09l0,0
+                                    c0.02-0.03,0.04-0.06,0.06-0.09l0,0c0.02-0.03,0.04-0.06,0.07-0.09h0c0.02-0.03,0.04-0.06,0.07-0.09l0,0
+                                    c0.02-0.03,0.05-0.06,0.07-0.09c0.02-0.03,0.05-0.06,0.07-0.09h0c0.02-0.03,0.05-0.06,0.07-0.09h0c0.02-0.03,0.05-0.06,0.07-0.09
+                                    c0.02-0.03,0.05-0.06,0.07-0.09h0c0.02-0.03,0.05-0.06,0.07-0.09c0.02-0.03,0.05-0.06,0.07-0.08c0.02-0.03,0.05-0.06,0.07-0.08
+                                    c0.03-0.03,0.05-0.06,0.08-0.08c0.03-0.03,0.05-0.05,0.08-0.08c0.03-0.03,0.05-0.05,0.08-0.08c0.03-0.03,0.05-0.05,0.08-0.08
+                                    c0.03-0.03,0.05-0.05,0.08-0.08c0.03-0.03,0.05-0.05,0.08-0.08c0.03-0.03,0.05-0.05,0.08-0.08c0.03-0.03,0.05-0.05,0.08-0.08
+                                    c0.03-0.03,0.06-0.05,0.08-0.07h0c0.03-0.02,0.06-0.05,0.08-0.07h0c0.03-0.02,0.06-0.05,0.09-0.07v0
+                                    c0.03-0.02,0.06-0.05,0.09-0.07h0c0.03-0.02,0.06-0.05,0.09-0.07l0,0c0.03-0.02,0.06-0.05,0.09-0.07l0,0
+                                    c0.03-0.02,0.06-0.05,0.09-0.07c0.03-0.02,0.06-0.05,0.09-0.07v0c0.03-0.02,0.06-0.04,0.09-0.07l0,0
+                                    c0.03-0.02,0.06-0.04,0.09-0.07v0c0.03-0.02,0.06-0.04,0.09-0.06v0c0.03-0.02,0.06-0.04,0.09-0.06c0.03-0.02,0.06-0.04,0.09-0.06
+                                    c0.03-0.02,0.06-0.04,0.09-0.06v0c0.03-0.02,0.06-0.04,0.1-0.06h0c0.03-0.02,0.06-0.04,0.1-0.06c0.03-0.02,0.06-0.04,0.1-0.06v0
+                                    c0.03-0.02,0.06-0.04,0.1-0.06h0c0.03-0.02,0.07-0.04,0.1-0.06l0,0c0.03-0.02,0.07-0.04,0.1-0.05v0c0.03-0.02,0.07-0.04,0.1-0.05
+                                    c0.03-0.02,0.07-0.03,0.1-0.05h0c0.03-0.02,0.07-0.03,0.1-0.05l0,0c0.03-0.02,0.07-0.03,0.1-0.05v0c0.03-0.02,0.07-0.03,0.1-0.05
+                                    l0,0c0.03-0.02,0.07-0.03,0.1-0.05h0c0.03-0.02,0.07-0.03,0.1-0.05v0c0.03-0.02,0.07-0.03,0.1-0.04v0
+                                    c0.03-0.01,0.07-0.03,0.11-0.04v0c0.04-0.01,0.07-0.03,0.11-0.04v0c0.04-0.01,0.07-0.03,0.11-0.04v0
+                                    c0.04-0.01,0.07-0.03,0.11-0.04v0c0.04-0.01,0.07-0.03,0.11-0.04v0c0.04-0.01,0.07-0.03,0.11-0.04v0
+                                    c0.04-0.01,0.07-0.02,0.11-0.04v0c0.04-0.01,0.07-0.02,0.11-0.03v0c0.04-0.01,0.07-0.02,0.11-0.03v0
+                                    c0.04-0.01,0.07-0.02,0.11-0.03v0c0.04-0.01,0.07-0.02,0.11-0.03v0c0.04-0.01,0.07-0.02,0.11-0.03v0
+                                    c0.04-0.01,0.07-0.02,0.11-0.03v0c0.04-0.01,0.08-0.02,0.11-0.03v0c0.04-0.01,0.08-0.02,0.11-0.03v0
+                                    c0.04-0.01,0.08-0.02,0.11-0.02v0c0.04-0.01,0.08-0.02,0.11-0.02v0c0.04-0.01,0.08-0.01,0.11-0.02v0
+                                    c0.04-0.01,0.08-0.01,0.12-0.02l0,0c0.04-0.01,0.08-0.01,0.12-0.02v0c0.04-0.01,0.08-0.01,0.12-0.02v0
+                                    c0.04-0.01,0.08-0.01,0.12-0.02v0c0.04,0,0.08-0.01,0.12-0.01v0c0.04,0,0.08-0.01,0.12-0.01v0c0.04,0,0.08-0.01,0.12-0.01v0
+                                    c0.04,0,0.08-0.01,0.12-0.01v0c0.04,0,0.08-0.01,0.12-0.01v0c0.04,0,0.08,0,0.12-0.01v0c0.04,0,0.08,0,0.12-0.01v0
+                                    c0.04,0,0.08,0,0.12,0v0c0.04,0,0.08,0,0.12,0v0C19.7,14.62,19.74,14.62,19.79,14.62L19.79,14.62L19.79,14.62z M30.53,11.08
+                                    c0.31-0.33,0.83-0.35,1.16-0.04c0.33,0.31,0.35,0.83,0.04,1.16l-3.47,3.74c-0.31,0.33-0.83,0.35-1.16,0.04
+                                    c-0.33-0.31-0.35-0.83-0.04-1.16L30.53,11.08z M11.31,31.79c0.31-0.33,0.83-0.35,1.16-0.04c0.33,0.31,0.35,0.83,0.04,1.16
+                                    l-3.47,3.74C8.73,36.98,8.21,37,7.88,36.69c-0.33-0.31-0.35-0.83-0.04-1.16L11.31,31.79L11.31,31.79z M3.11,24.69
+                                    c-0.45,0-0.82-0.37-0.82-0.82c0-0.45,0.37-0.82,0.82-0.82h5.1c0.45,0,0.82,0.37,0.82,0.82c0,0.45-0.37,0.82-0.82,0.82H3.11
+                                    L3.11,24.69z M31.36,24.69c-0.45,0-0.82-0.37-0.82-0.82c0-0.45,0.37-0.82,0.82-0.82h5.1c0.45,0,0.82,0.37,0.82,0.82
+                                    c0,0.45-0.37,0.82-0.82,0.82H31.36z M7.84,12.2c-0.31-0.33-0.29-0.85,0.04-1.16c0.33-0.31,0.85-0.29,1.16,0.04l3.47,3.74
+                                    c0.31,0.33,0.29,0.85-0.04,1.16c-0.33,0.31-0.85,0.29-1.16-0.04L7.84,12.2L7.84,12.2z M27.06,32.91
+                                    c-0.31-0.33-0.29-0.85,0.04-1.16c0.33-0.31,0.85-0.29,1.16,0.04l3.47,3.74c0.31,0.33,0.29,0.85-0.04,1.16
+                                    c-0.33,0.31-0.85,0.29-1.16-0.04L27.06,32.91z M18.96,7.19c0-0.45,0.37-0.82,0.82-0.82c0.45,0,0.82,0.37,0.82,0.82v5.1
+                                    c0,0.45-0.37,0.82-0.82,0.82c-0.45,0-0.82-0.37-0.82-0.82V7.19L18.96,7.19z M18.96,35.44c0-0.45,0.37-0.82,0.82-0.82
+                                    c0.45,0,0.82,0.37,0.82,0.82v5.1c0,0.45-0.37,0.82-0.82,0.82c-0.45,0-0.82-0.37-0.82-0.82V35.44z M10.45,23.96L10.45,23.96
+                                    L10.45,23.96z M19.79,16.14v15.62c2.16,0,4.11-0.87,5.52-2.29c1.41-1.41,2.29-3.37,2.29-5.52c0-2.16-0.87-4.11-2.29-5.52
+                                    C23.9,17.02,21.94,16.14,19.79,16.14L19.79,16.14z"/>
+                            </g>
+                        </g>
+                        </svg>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="body_div" class="container-fluid">
+    <div class="main_div">
+        <div class="intro_div">
+            <div class="row" id="welcome_profile">
+                <div class="col-lg-6 intro_pic_div container-fluid">
+                    <img class="intro_pic" id="intro_pic" src={% static 'site_stuffs/arbind.jpg' %}>
+                </div>
+                <div class="col-lg-6 intro_div1 container-fluid">
+                    <div class="hello_div">
+                        <span>Hello</span>
+                    </div>
+                    <div class="intro_txt_div">
+                        <span class="intro_txt_div1">A Bit About Me</span><br>
+                        <p class="intro_txt_div2">
+                            Desktop, Mobile, and Web application development specialist with more
+                            than four years of experience. I focus on maximum customer
+                            satisfaction by considering the requirements in every phase of
+                            the Software Development Life Cycle.
+                        </p>
+                    </div>
+                    <div class="intro_btns_div">
+                        <button class="btns" onclick="showResume()">Resume</button>
+                        <button class="btns" onclick="showPortfolio()">Portfolio</button>
+                        <button class="btns" onclick="showContacts()">Contacts</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div hidden id="body_div2" class="container-fluid">
+    <div class="container">
+        <div class="row resume_tittle">
+            <span>Resume</span>
+        </div>
+        <div class="row no-gutters" style="margin-top: 30px!important;">
+            <div class="col-lg-4 t1">
+                <span>Work <br>Experience</span>
+            </div>
+            <div class="col-lg-8 t4">
+                <div class="container">
+                    <div class="row no-gutters mb-5">
+                        <div class="col-lg-3 t2">
+                            <span>2022-Present</span>
+                        </div>
+                        <div class="col-lg-9 t3">
+                            <span class="t5">Associate Software Engineer</span><br>
+                            <span class="t6">Joined on April 2022 as a Python/Django Intern at
+                                <a class="port_quick_links" target="_blank"
+                                   href="https://www.vacker360.com/">Vacker360</a>.
+                                Currently, working as Associate Software Engineer.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row no-gutters mb-2">
+                        <div class="col-lg-3 t2">
+                            <span>2020-Present</span>
+                        </div>
+                        <div class="col-lg-9 t3">
+                            <span class="t5">Freelancer</span><br>
+                            <span class="t6">Joined
+                                <a class="port_quick_links" target="_blank"
+                                   href="https://www.upwork.com/freelancers/~01ee40c626c31537a9">Upwork</a>
+                                community for part-time freelancing on May 2020. Work on project related to Desktop, Mobile & Web application development.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="resume_seperator"></div>
+        <div class="row no-gutters">
+            <div class="col-lg-4 t1">
+                <span>Education</span>
+            </div>
+            <div class="col-lg-8 t4">
+                <div class="container">
+                    <div class="row no-gutters mb-5">
+                        <div class="col-lg-3 t2">
+                            <span>2018-2022</span>
+                        </div>
+                        <div class="col-lg-9 t3">
+                            <span class="t5">Purwanchal Campus</span><br>
+                            <span class="t6">
+                                Bachelor in Engineering, Computer Engineering from
+                                <a class="port_quick_links" target="_blank" href="https://ioe.edu.np/">IOE</a>,
+                                <a class="port_quick_links" target="_blank" href="https://www.ioepc.edu.np/">Purwanchal Campus</a>,
+                                Dharan, Nepal.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row no-gutters mb-5">
+                        <div class="col-lg-3 t2">
+                            <span>2016-2018</span>
+                        </div>
+                        <div class="col-lg-9 t3">
+                            <span class="t5">Arniko Awasiya Secondary School</span><br>
+                            <span class="t6">
+                                Higher Secondary Education in Science faculty form
+                                <a class="port_quick_links" target="_blank"
+                                   href="https://arnikoplustwo.arnikofoundation.edu.np/home">Arniko Awasiya Secondary
+                                School</a> located at Biratnagar, Nepal and registered under
+                                <a class="port_quick_links" target="_blank" href="https://www.neb.gov.np/">Nepal Examination Board</a>.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row no-gutters mb-2">
+                        <div class="col-lg-3 t2">
+                            <span>2006-2016</span>
+                        </div>
+                        <div class="col-lg-9 t3">
+                            <span class="t5">Koshi Public Academy</span><br>
+                            <span class="t6">
+                                Secondary Education from Koshi Public Academy located at Inaruwa, Nepal and registered under
+                                <a class="port_quick_links" target="_blank" href="https://www.see.gov.np/">Secondary Education Examination</a>, Nepal.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="resume_seperator"></div>
+
+        <div class="row no-gutters" style="margin-bottom: 100px">
+            <div class="col-lg-4 t1">
+                <span>Skills <br>& Expertise</span>
+            </div>
+            <div class="col-lg-8 t4">
+                <div class="container">
+                    <div class="row no-gutters mb-5">
+                        <div class="col-lg-3 t2">
+                            {#                            <span><img src="{% static 'site_stuffs/python-language-logo.png' %}"></span>#}
+                        </div>
+                        <div class="col-lg-9 t3">
+                            <span class="t5">Python</span><br>
+                            <span class="t6">
+                                About four years of experience working with Python and its libraries like Django, ODOO,
+                                Tkinter, Keras, etc. Done different projects related to Web and Desktop Applications, Artificial Intelligence
+                                and Data Science using Python.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row no-gutters mb-5">
+                        <div class="col-lg-3 t2">
+                            <span></span>
+                        </div>
+                        <div class="col-lg-9 t3">
+                            <span class="t5">JavaScript, HTML & CSS</span><br>
+                            <span class="t6">
+                                Web development using Django, JavaScript, HTML, CSS, and
+                                Bootstrap. Worked as fullstack developer for
+                                <a class="port_quick_links" target="_blank"
+                                   href="https://www.upwork.com/freelancers/~01ee40c626c31537a9">upwork</a>
+                                clients.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row no-gutters mb-5">
+                        <div class="col-lg-3 t2">
+                            <span></span>
+                        </div>
+                        <div class="col-lg-9 t3">
+                            <span class="t5">Flutter</span><br>
+                            <span class="t6">
+                                Beginners with one year of experience in Android/IOS application development
+                                with Flutter. Done some basic projects like music player and chatting apps.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row no-gutters mb-5">
+                        <div class="col-lg-3 t2">
+                            <span></span>
+                        </div>
+                        <div class="col-lg-9 t3">
+                            <span class="t5">C/C++</span><br>
+                            <span class="t6">
+                                Learnt C/C++ during college time. Done different
+                                advance project like socket programming using C++.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row no-gutters mb-5">
+                        <div class="col-lg-3 t2">
+                            <span></span>
+                        </div>
+                        <div class="col-lg-9 t3">
+                            <span class="t5">Database</span><br>
+                            <span class="t6">
+                                Good knowledge of PostgreSQL and MySQL database. Mostly, works with ORM.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row no-gutters mb-5">
+                        <div class="col-lg-3 t2">
+                            <span></span>
+                        </div>
+                        <div class="col-lg-9 t3">
+                            <span class="t5">Problem-solving & Data Science</span><br>
+                            <span class="t6">
+                                Good at solving problem via different efficient/appropriate
+                                algorithms and data structure. Worked on projects related to
+                                big data, machine learning.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row no-gutters mb-5">
+                        <div class="col-lg-3 t2">
+                            <span></span>
+                        </div>
+                        <div class="col-lg-9 t3">
+                            <span class="t5">General Skills</span><br>
+                            <span class="t6">
+                                Basic knowledge of Microsoft Word, Excel, Powerpoint, Visio,
+                                Adobe Photoshop, Illustrator, and different command line utilities tools.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div hidden id="body_div3" class="container-fluid">
+    <div class="container">
+        <div class="row contact_tittle">
+            <span>Contact</span>
+            <span class="t7">Looking forward to hearing from you</span>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 t13">
+                <div>
+                    <span class="footer_head">Phone</span><br>
+                    <span class="footer_data">+977 9843032377</span><br>
+                    <span class="footer_data">+977 9810573631</span><br>
+                </div>
+                <div style="margin-top: 15px">
+                    <span class="footer_head">Email</span><br>
+                    <span class="footer_data">mehtaarbind67@gmail.com</span><br>
+                    <span class="footer_data">arbindmehta67@yahoo.com</span>
+                </div>
+            </div>
+            <div class="col-lg-9 t4">
+                <div class="container message_divs">
+                    <div class="row no-gutters mb-2">
+                        <div class="col-lg-6">
+                            <div class="t15">
+                                <label for="f_name" class="t23">First Name</label>
+                                <input type="text" id="f_name" name="f_name">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="t15 t16">
+                                <label for="l_name" class="t23">Last Name</label>
+                                <input type="text" id="l_name" name="l_name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters mb-2">
+                        <div class="col-lg-6">
+                            <div class="t15">
+                                <label for="email" class="t23">Email *</label>
+                                <input type="email" required id="email" name="email">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="t15 t16">
+                                <label for="subject" class="t23">Subject</label>
+                                <input type="text" id="subject" name="subject">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters mb-2">
+                        <div class="col-lg-8 message_col">
+                            <div class="message_div">
+                                <label for="message" class="t23">Message</label>
+                                <div contenteditable="true" id="message" multiple name="message"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 submit_btn_div">
+                            <button class="submit_btns" style="margin-top: 30px!important;">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div hidden id="body_div4" class="container-fluid">
+    <div class="container">
+        <div class="row resume_tittle">
+            <span>Portfolio</span>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-lg-6 t1">
+                <div class="container">
+                    <span class="t5">Digital Election System</span><br>
+                    <span class="t66">
+                        Project aimed to eliminate the paperwork during the election and ease the
+                        election procedure. Developed using Python/Django, HTML, JavaScript,
+                        Socket programming, and related libraries.
+                    </span><br>
+                    <span class="t66">
+                        <b>Award:</b> First Runner-Up, Organized by <a class="port_quick_links" target="_blank"
+                                                                       href="https://www.delta.ioepc.edu.np/">DELTA</a> 1.0, Purwanchal Campus.
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-6 t4">
+                <div class="container portfolio_carsoule">
+                    {#                    <div class="col-lg-9 t3">#}
+                    {#                        <img style="width: 400px; height: 200px" src="{% static 'site_stuffs/arbind.jpg' %}">#}
+                    {#                    </div>#}
+                    <div id="carouselExampleIndicators_p1" class="carousel slide " data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators_p1" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators_p1" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators_p1" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators_p1" data-slide-to="3"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100 carsoule_image"
+                                     src="{% static 'site_stuffs/image_original (4).jpg' %}" alt="Certificate">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 carsoule_image"
+                                     src="{% static 'site_stuffs/image_original.jpg' %}" alt="Ballot Paper">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 carsoule_image"
+                                     src="{% static 'site_stuffs/image_original11.jpg' %}" alt="Signup Page">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 carsoule_image" src="{% static 'site_stuffs/login.jpg' %}"
+                                     alt="Login Page">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators_p1" role="button"
+                           data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators_p1" role="button"
+                           data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="resume_seperator"></div>
+        <div class="row no-gutters">
+            <div class="col-lg-6 t1">
+                <div class="container">
+                    <span class="t5">Covid Response</span><br>
+                    <span class="t66">
+                        Queuing system, developed by using Python/Django, Flutter, JavaScript,
+                        HTML, CSS and related libraries to reduce and manage the crowd near the
+                        vaccination center and to predict covid-19 cases based on symptoms.
+                    </span><br>
+                    <span class="t66">
+                        <b>Award:</b> Winner, Organized by <a class="port_quick_links" href="https://www.locus.com.np/"
+                                                              target="_blank">LOCUS</a> 2021, Pulchowk Campus.
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-6 t4">
+                <div class="container portfolio_carsoule">
+                    <div id="carouselExampleIndicators_p2" class="carousel slide " data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators_p2" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators_p2" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators_p2" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100 carsoule_image"
+                                     src="{% static 'site_stuffs/image_original_lo_ser.jpg' %}" alt="Certificate">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 carsoule_image"
+                                     style="margin-left: auto!important; margin-right:auto!important; width: 200px!important;"
+                                     src="{% static 'site_stuffs/loc_das.jpg' %}" alt="Dashboard">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 carsoule_image"
+                                     src="{% static 'site_stuffs/image_original_web_das.jpg' %}" alt="Web Dashboard">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators_p2" role="button"
+                           data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators_p2" role="button"
+                           data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="resume_seperator"></div>
+        <div class="row no-gutters">
+            <div class="col-lg-6 t1">
+                <div class="container">
+                    <span class="t5">Live Coding</span><br>
+                    <span class="t66">
+                        Event organized by <a class="port_quick_links" target="_blank"
+                                              href="https://acesnepal.ioepc.edu.np/">ACES</a> TECHFEST 3.0, Purwanchal Campus.
+                    </span><br>
+                    <span class="t66">
+                        <b>Award:</b>  First Runner-Up.
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-6 t4">
+                <div class="container portfolio_carsoule" style="text-align: center!important;">
+                    <img style="width: 350px!important;"
+                         src="{% static 'site_stuffs/Screenshot 2022-11-15 at 4.19.02 PM.png' %}">
+                </div>
+            </div>
+        </div>
+        <div class="resume_seperator"></div>
+        <div class="row no-gutters">
+            <div class="col-lg-6 t1">
+                <div class="container">
+                    <span class="t5"><a class="port_quick_links" target="_blank"
+                                        href="https://myhaircare.herokuapp.com/">Hair Fall Prediction Using ANN</a></span><br>
+                    <span class="t66">
+                        This project predicts the chance of hair fall in near future based on current symptoms using ANN.
+                    </span><br>
+                </div>
+            </div>
+            <div class="col-lg-6 t4">
+                <div class="container portfolio_carsoule">
+                    <div id="carouselExampleIndicators_p4" class="carousel slide " data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators_p4" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators_p4" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators_p4" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators_p4" data-slide-to="3"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100 carsoule_image"
+                                     src="{% static 'site_stuffs/Screenshot 2022-11-15 at 3.49.46 PM.png' %}"
+                                     alt="Welcome Screen">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 carsoule_image"
+                                     src="{% static 'site_stuffs/Screenshot 2022-11-15 at 3.54.05 PM.png' %}"
+                                     alt="Conducting Survey">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 carsoule_image"
+                                     src="{% static 'site_stuffs/Screenshot 2022-11-15 at 3.55.47 PM.png' %}"
+                                     alt="Result Page">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 carsoule_image"
+                                     src="{% static 'site_stuffs/Screenshot 2022-11-15 at 3.57.10 PM.png' %}"
+                                     alt="Login Page">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators_p4" role="button"
+                           data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators_p4" role="button"
+                           data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="resume_seperator"></div>
+        <div class="row no-gutters">
+            <div class="col-lg-6 t1">
+                <div class="container">
+                    <span class="t5">Music Player</span><br>
+                    <span class="t66">
+                        This is my hobby project. I tried to mimic the VLC media player.
+                        It can play .mp3 files, show file's metadata, save recent files,
+                        browse files and directories, etc. It is developed using
+                        Python and its library like Tkinter, PyQT, PyGame, Mutagen, etc.
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-6 t4">
+                <div class="container portfolio_carsoule">
+                    <img src="{% static 'site_stuffs/player.jpg' %}">
+                </div>
+            </div>
+        </div>
+        <div class="resume_seperator"></div>
+        <div class="row no-gutters">
+            <div class="col-lg-6 t1">
+                <div class="container">
+                    <span class="t5"><a class="port_quick_links" target="_blank"
+                                        href="http://arbindblog.herokuapp.com/">Personal Blog App</a></span><br>
+                    <span class="t66">
+                        This is a personal website containing a good user authentication system.
+                        It also contains a good discussion forum where users can post there queries and answer the previous queries.
+                        It also contains a download section from where users can download different files.
+                        The content of the homepage is scraped from different websites like BBC, worldometers, etc.
+                        The backend is completed using Django.
+                    </span><br>
+                </div>
+            </div>
+            <div class="col-lg-6 t4">
+                <div class="container portfolio_carsoule">
+                    <div id="carouselExampleIndicators_p6" class="carousel slide " data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators_p6" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators_p6" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators_p6" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100 carsoule_image" src="{% static 'site_stuffs/per.jpg' %}"
+                                     alt="Home Page">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 carsoule_image" src="{% static 'site_stuffs/dash.jpg' %}"
+                                     alt="Blog Page">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 carsoule_image" src="{% static 'site_stuffs/profi.jpg' %}"
+                                     alt="Profile Page">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators_p6" role="button"
+                           data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators_p6" role="button"
+                           data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="resume_seperator"></div>
+        <div class="row no-gutters">
+            <div class="col-lg-6 t1">
+                <div class="container">
+                    <span class="t5">Music Player</span><br>
+                    <span class="t66">
+                        Music player app developed using Flutter. It can
+                        play .MP3 files and displays the metadata of files in cool way.
+                    </span><br>
+                </div>
+            </div>
+            <div class="col-lg-6 t4">
+                <div class="container portfolio_carsoule">
+                    <div id="carouselExampleIndicators_p11" class="carousel slide " data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators_p11" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators_p11" data-slide-to="1"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img style="margin-left: auto!important;margin-right: auto!important; width: 160px!important;"
+                                     class="d-block w-100 carsoule_image"
+                                     src="{% static 'site_stuffs/20221115_164926.jpg' %}" alt="Home Page">
+                            </div>
+                            <div class="carousel-item">
+                                <img style="margin-left: auto!important;margin-right: auto!important; width: 160px!important;"
+                                     class="d-block w-100 carsoule_image"
+                                     src="{% static 'site_stuffs/20221115_164942.jpg' %}" alt="Blog Page">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators_p11" role="button"
+                           data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators_p11" role="button"
+                           data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div style="margin-bottom: 100px!important;"></div>
+    </div>
+</div>
+
+<footer>
+    <div class="container-fluid">
+        <div class="footer_upper_line"></div>
+        <div class="row">
+            <div class="col-lg-4">
+                <span class="footer_head">Phone</span><br>
+                <span class="footer_data">+977 9843032377</span><br>
+                <span class="footer_data">+977 9810573631</span>
+            </div>
+            <div class="col-lg-4">
+                <span class="footer_head">Email</span><br>
+                <span class="footer_data">mehtaarbind67@gmail.com</span><br>
+                <span class="footer_data">arbindmehta67@yahoo.com</span>
+            </div>
+            <div class="col-lg-4">
+                <span class="footer_head">Follow Me</span><br>
+                <div class="social_lnks">
+                    <div class="social_lnks_div">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                        <a id="facebook" xlink:href="https://www.facebook.com/arbind.mehta.549/">
+                            <g>
+                                <g>
+                                    <path id="fb_path" fill="#020203" d="M42.95,24.74c0-9.77-7.92-17.69-17.69-17.69c-9.77,0-17.69,7.92-17.69,17.69
+                                        c0,8.83,6.47,16.15,14.93,17.48V29.85h-4.49v-5.11h4.49v-3.9c0-4.43,2.64-6.88,6.68-6.88c1.94,0,3.96,0.35,3.96,0.35v4.35h-2.23
+                                        c-2.2,0-2.88,1.36-2.88,2.76v3.32h4.91l-0.78,5.11h-4.12v12.36C36.48,40.88,42.95,33.57,42.95,24.74z"/>
+                                    <path fill="#FFFFFF" d="M32.15,29.85l0.78-5.11h-4.91v-3.32c0-1.4,0.69-2.76,2.88-2.76h2.23V14.3c0,0-2.02-0.35-3.96-0.35
+                                        c-4.04,0-6.68,2.45-6.68,6.88v3.9h-4.49v5.11h4.49v12.36c0.9,0.14,1.82,0.22,2.76,0.22c0.94,0,1.86-0.07,2.76-0.22V29.85H32.15z"
+                                    />
+                                </g>
+                            </g>
+                        </a>
+                    </svg>
+                    </div>
+                    <div class="social_lnks_div">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                            <a id="insta" xlink:href="https://www.instagram.com/mehtaarbind/">
+                                <g>
+                                    <circle fill="#020203" cx="25.26" cy="24.74" r="17.69"/>
+                                    <g>
+                                        <g>
+                                            <path fill="#FFFFFF" d="M30.75,18.04c-0.67,0-1.22,0.54-1.22,1.22c0,0.67,0.54,1.22,1.22,1.22c0.67,0,1.22-0.54,1.22-1.22
+                                                C31.97,18.59,31.43,18.04,30.75,18.04z"/>
+                                            <path fill="#FFFFFF" d="M25.35,19.6c-2.82,0-5.11,2.29-5.11,5.11c0,2.82,2.29,5.11,5.11,5.11c2.82,0,5.11-2.29,5.11-5.11
+                                                C30.46,21.89,28.16,19.6,25.35,19.6z M25.35,27.98c-1.8,0-3.27-1.47-3.27-3.27c0-1.8,1.47-3.27,3.27-3.27s3.27,1.47,3.27,3.27
+                                                C28.62,26.51,27.15,27.98,25.35,27.98z"/>
+                                            <path fill="#FFFFFF" d="M29.4,35.08h-8.28c-3.44,0-6.23-2.79-6.23-6.23v-8.28c0-3.44,2.79-6.23,6.23-6.23h8.28
+                                                c3.44,0,6.23,2.79,6.23,6.23v8.28C35.63,32.29,32.84,35.08,29.4,35.08z M21.12,16.29c-2.36,0-4.28,1.92-4.28,4.28v8.28
+                                                c0,2.36,1.92,4.28,4.28,4.28h8.28c2.36,0,4.28-1.92,4.28-4.28v-8.28c0-2.36-1.92-4.28-4.28-4.28H21.12z"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </a>
+                        </svg>
+                    </div>
+                    <div class="social_lnks_div">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                            <a id="linkedin" xlink:href="https://www.linkedin.com/in/arbind-mehta-324661170/">
+                                <g>
+                                    <circle fill="#020203" cx="25.26" cy="24.74" r="17.5"/>
+                                    <path fill="#FFFFFF" d="M17.92,21.48h3.39v10.89h-3.39V21.48z M19.62,16.07c1.08,0,1.96,0.88,1.96,1.96
+                                        c0,1.08-0.88,1.96-1.96,1.96c-1.09,0-1.96-0.88-1.96-1.96C17.65,16.95,18.53,16.07,19.62,16.07"/>
+                                    <path fill="#FFFFFF" d="M23.44,21.48h3.25v1.49h0.04c0.45-0.86,1.56-1.76,3.2-1.76c3.43,0,4.06,2.25,4.06,5.19v5.97h-3.38v-5.29
+                                        c0-1.26-0.02-2.89-1.76-2.89c-1.76,0-2.03,1.38-2.03,2.8v5.39h-3.38V21.48z"/>
+                                </g>
+                            </a>
+                        </svg>
+                    </div>
+                    <div class="social_lnks_div">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                        <a id="twitter" xlink:href="https://twitter.com/ArbindMehta11">
+                            <g>
+                                <circle fill="#020203" cx="25.26" cy="24.74" r="17.69"/>
+                                <path fill="#FFFFFF" d="M35.04,18.67c-0.61,0.28-1.29,0.45-1.95,0.56c0.31-0.05,0.77-0.62,0.96-0.85
+                                    c0.28-0.35,0.52-0.75,0.65-1.18c0.02-0.03,0.03-0.08,0-0.1c-0.04-0.02-0.07-0.01-0.1,0.01c-0.74,0.4-1.5,0.68-2.31,0.89
+                                    c-0.07,0.02-0.12,0-0.16-0.04c-0.07-0.08-0.13-0.15-0.2-0.21c-0.34-0.29-0.71-0.52-1.12-0.69c-0.54-0.22-1.13-0.31-1.72-0.28
+                                    c-0.57,0.04-1.13,0.2-1.63,0.46c-0.51,0.26-0.96,0.63-1.32,1.07c-0.37,0.46-0.65,1-0.79,1.57c-0.14,0.55-0.12,1.1-0.04,1.66
+                                    c0.01,0.09,0,0.11-0.08,0.09c-3.18-0.47-5.81-1.61-7.95-4.05c-0.09-0.11-0.14-0.11-0.22,0.01c-0.94,1.4-0.48,3.66,0.69,4.76
+                                    c0.16,0.15,0.32,0.3,0.49,0.43c-0.06,0.01-0.84-0.07-1.53-0.43c-0.09-0.06-0.14-0.03-0.15,0.08c-0.01,0.15,0,0.29,0.03,0.46
+                                    c0.18,1.42,1.16,2.74,2.51,3.25c0.16,0.07,0.34,0.13,0.51,0.16c-0.31,0.07-0.62,0.12-1.5,0.05c-0.11-0.02-0.15,0.03-0.11,0.14
+                                    c0.66,1.8,2.09,2.34,3.16,2.65c0.14,0.02,0.29,0.02,0.43,0.06c-0.01,0.01-0.02,0.01-0.03,0.03c-0.35,0.54-1.59,0.94-2.16,1.14
+                                    c-1.04,0.36-2.18,0.53-3.28,0.42c-0.18-0.03-0.21-0.02-0.26,0c-0.05,0.03-0.01,0.07,0.05,0.12c0.22,0.15,0.45,0.28,0.68,0.4
+                                    c0.7,0.37,1.43,0.67,2.19,0.88c3.94,1.09,8.38,0.29,11.33-2.65c2.32-2.31,3.14-5.49,3.14-8.68c0-0.12,0.15-0.19,0.23-0.26
+                                    c0.6-0.45,1.09-1,1.54-1.6c0.1-0.14,0.1-0.26,0.1-0.31c0-0.01,0-0.02,0-0.02C35.12,18.62,35.12,18.64,35.04,18.67z"/>
+                            </g>
+                        </a>
+                    </svg>
+
+                    </div>
+                    <div class="social_lnks_div">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                            <a id="youtube" xlink:href="https://www.youtube.com/channel/UCqT-KF0RRcj0EMwTARJW-zA">
+                                <g>
+                                    <circle fill="#020203" cx="25.26" cy="24.74" r="17.69"/>
+                                    <path fill="#FFFFFF" d="M34.73,22.21c0-2.35-1.9-4.25-4.25-4.25H19.62c-2.35,0-4.25,1.9-4.25,4.25v5.06c0,2.35,1.9,4.25,4.25,4.25
+                                        h10.86c2.35,0,4.25-1.9,4.25-4.25V22.21z M28.35,25.11l-4.87,2.41c-0.19,0.1-0.84-0.03-0.84-0.25v-4.95
+                                        c0-0.22,0.65-0.36,0.85-0.25l4.66,2.54C28.34,24.72,28.54,25.01,28.35,25.11z"/>
+                                </g>
+                            </a>
+                        </svg>
+                    </div>
+                    <div class="social_lnks_div">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                            <a id="github" xlink:href="https://github.com/Arbind15">
+                                <g>
+                                    <path class="github_path" d="M24.71,7.73L24.71,7.73c9.67,0,17.5,7.84,17.5,17.5v0c0,9.66-7.84,17.5-17.5,17.5h0c-9.66,0-17.5-7.83-17.5-17.5v0
+                                        C7.21,15.57,15.04,7.73,24.71,7.73z"/>
+                                    <g>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M24.71,15.67c-5.41,0-9.8,4.39-9.8,9.8c0,4.22,2.7,7.96,6.7,9.3
+                                            c0.49,0.09,0.67-0.21,0.67-0.47c0-0.26,0-1.01,0-1.82c-2.73,0.59-3.29-1.16-3.29-1.16c-0.44-1.13-1.09-1.44-1.09-1.44
+                                            c-0.89-0.61,0.07-0.59,0.07-0.59c0.63,0.09,1.18,0.46,1.5,1.01c0.87,1.5,2.29,1.07,2.85,0.82c0.04-0.5,0.26-0.96,0.62-1.31
+                                            c-2.18-0.25-4.47-1.09-4.47-4.85c-0.01-0.97,0.35-1.91,1.01-2.63c-0.3-0.84-0.27-1.77,0.09-2.59c0,0,0.82-0.26,2.69,1
+                                            c1.61-0.44,3.3-0.44,4.91,0c1.87-1.27,2.69-1,2.69-1c0.36,0.82,0.4,1.75,0.09,2.59c0.66,0.71,1.02,1.65,1.01,2.63
+                                            c0,3.77-2.29,4.6-4.47,4.84c0.47,0.48,0.71,1.14,0.66,1.82c0,1.31,0,2.36,0,2.69c0,0.26,0.18,0.56,0.68,0.47
+                                            c5.13-1.71,7.91-7.26,6.2-12.4c-1.33-4.01-5.08-6.71-9.31-6.7L24.71,15.67z"/>
+                                        <path fill="#FFFFFF" d="M18.62,29.74c0,0.05-0.09,0.06-0.16,0.03c-0.07-0.03-0.11-0.1-0.09-0.15c0.02-0.05,0.1-0.06,0.17-0.03
+                                            C18.6,29.63,18.64,29.69,18.62,29.74z"/>
+                                        <path fill="#FFFFFF" d="M19.02,30.18c-0.05,0.05-0.14,0.02-0.2-0.05c-0.06-0.05-0.07-0.14-0.03-0.2c0.05-0.05,0.14-0.02,0.2,0.05
+                                            C19.06,30.05,19.07,30.14,19.02,30.18z"/>
+                                        <path fill="#FFFFFF" d="M19.41,30.75c-0.06,0.04-0.16,0-0.22-0.09c-0.06-0.09-0.06-0.19,0-0.23c0.06-0.04,0.16,0,0.22,0.08
+                                            C19.47,30.6,19.47,30.71,19.41,30.75z"/>
+                                        <path fill="#FFFFFF" d="M19.93,31.3c-0.05,0.06-0.17,0.04-0.25-0.04c-0.08-0.08-0.11-0.19-0.05-0.25
+                                            c0.06-0.06,0.17-0.04,0.25,0.04C19.96,31.12,19.99,31.24,19.93,31.3z"/>
+                                        <path fill="#FFFFFF" d="M20.67,31.61c-0.02,0.07-0.14,0.11-0.25,0.08c-0.11-0.03-0.18-0.12-0.16-0.2
+                                            c0.02-0.08,0.14-0.11,0.25-0.08C20.62,31.44,20.69,31.54,20.67,31.61z"/>
+                                        <path fill="#FFFFFF" d="M21.46,31.67c0,0.08-0.09,0.15-0.21,0.15c-0.12,0-0.21-0.06-0.21-0.14c0-0.08,0.09-0.15,0.21-0.15
+                                            C21.37,31.52,21.46,31.59,21.46,31.67L21.46,31.67z"/>
+                                        <path fill="#FFFFFF" d="M22.21,31.54c0,0.08-0.07,0.16-0.19,0.18c-0.12,0.02-0.22-0.02-0.23-0.1c-0.01-0.08,0.07-0.16,0.18-0.19
+                                            C22.09,31.42,22.2,31.47,22.21,31.54L22.21,31.54z"/>
+                                    </g>
+                                </g>
+                            </a>
+                        </svg>
+
+                    </div>
+                    <div class="social_lnks_div">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                            <a id="upwork" xlink:href="https://www.upwork.com/freelancers/~01ee40c626c31537a9">
+                                <circle fill-rule="evenodd" clip-rule="evenodd" cx="25.26" cy="24.74" r="17.5"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M13.98,15.35c0.41,0,0.81,0,1.22,0c0.52,0,1.03,0,1.57,0
+                                    c0,0.07,0,0.16,0,0.25c0,2.94,0,5.89,0,8.83c0,1.47,0.69,2.71,1.75,3.18c1.43,0.64,3-0.35,3.42-2.19c0.08-0.34,0.11-0.71,0.11-1.07
+                                    c0.01-2.92,0-5.85,0-8.77c0-0.09,0-0.17,0-0.27c0.07,0,0.13-0.01,0.18-0.01c0.81,0,1.61,0,2.42,0c0.13,0,0.19,0.04,0.23,0.2
+                                    c0.52,2.12,1.25,4.13,2.13,6.06c0.19,0.41,0.4,0.81,0.61,1.26c0.05-0.19,0.09-0.34,0.13-0.49c0.4-1.52,1.05-2.85,2.08-3.84
+                                    c0.79-0.76,1.69-1.18,2.69-1.29c1.83-0.2,3.32,0.63,4.54,2.29c0.86,1.17,1.32,2.56,1.42,4.15c0.12,1.95-0.33,3.68-1.37,5.14
+                                    c-1.34,1.88-3.02,2.65-5.02,2.33c-0.94-0.15-1.81-0.53-2.62-1.13c-0.06-0.05-0.13-0.09-0.21-0.14c-0.41,2.46-0.82,4.91-1.23,7.39
+                                    c-0.95,0-1.89,0-2.84,0c0.14-0.87,0.29-1.74,0.43-2.61c0.41-2.48,0.82-4.96,1.23-7.44c0.01-0.08,0-0.18-0.03-0.24
+                                    c-0.73-1.26-1.37-2.59-1.98-3.98c0,0.07,0,0.14,0,0.22c-0.01,0.71,0.02,1.42-0.04,2.12c-0.22,2.34-1.17,4.1-2.82,5.26
+                                    c-0.78,0.55-1.63,0.82-2.51,0.82c-1.1,0.01-2.13-0.38-3.04-1.16c-1.25-1.07-2.02-2.55-2.31-4.4c-0.07-0.42-0.09-0.86-0.09-1.29
+                                    c-0.02-1.32-0.01-2.65-0.02-3.97c0-0.12-0.01-0.24-0.02-0.37C13.98,18.59,13.98,16.97,13.98,15.35z M33.11,20.68
+                                    c-0.68,0.01-1.27,0.26-1.76,0.87c-0.39,0.48-0.68,1.06-0.83,1.71c-0.2,0.89-0.36,1.8-0.54,2.7c-0.03,0.13-0.01,0.19,0.07,0.27
+                                    c0.41,0.43,0.88,0.76,1.37,1c0.54,0.27,1.11,0.44,1.69,0.42c0.75-0.03,1.4-0.4,1.94-1.07c0.55-0.69,0.86-1.51,0.86-2.48
+                                    C35.92,22.19,34.65,20.67,33.11,20.68z"/>
+                            </a>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_upper_line" style="width: 30%!important; margin-top: 10px!important;"></div>
+        <div class="row">
+            <div class="col">
+                <span style="font-size: 15px; color: var(--txt_black)">&#169; 2022 By Arbind Mehta.</span>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+<script type="text/javascript" src="{% static 'index.js' %}"></script>
+<script type="text/javascript" src="{% static 'jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap.min.js' %}"></script>
+</html>
